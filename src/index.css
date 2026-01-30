@@ -1,7 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply bg-slate-50 text-slate-900;
+  font-family: 'Poppins', sans-serif;
+  /* Fundo gradiente animado sutil */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  @apply text-slate-800 antialiased;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Esconde a barra de rolagem para parecer nativo */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
