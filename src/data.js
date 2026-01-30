@@ -1,216 +1,143 @@
-import { Brain, BookOpen, Activity, Scale, Users, FileText } from 'lucide-react';
+import { Brain, FileText, Users, Activity, Scale, BookOpen } from 'lucide-react';
 
-export const courseData = [
+export const courses = [
   {
     id: 'fundamentos',
     title: 'Módulo 1: Fundamentos Teóricos',
     icon: Brain,
-    color: 'from-violet-500 to-purple-600',
-    description: 'Os gigantes da psicologia do desenvolvimento: Piaget, Vygotsky e Wallon.',
-    lessons: [
+    color: 'bg-violet-600',
+    description: 'A base epistemológica: Piaget, Vygotsky, Wallon e a Neurociência.',
+    content: [
       {
-        id: 'piaget-deep',
-        title: 'Jean Piaget e a Epistemologia Genética',
-        readTime: '10 min',
-        content: `
-          # O Construtivismo Piagetiano
-          Jean Piaget revolucionou a educação ao provar que a criança não é um "adulto em miniatura". Ela constrói conhecimento ativamente.
+        id: 'aula1',
+        title: 'Epistemologia Genética de Piaget',
+        type: 'text',
+        text: `
+# A Construção do Conhecimento
 
-          ## Os 4 Estágios do Desenvolvimento Cognitivo
-          1. **Sensório-motor (0-2 anos):** A inteligência é prática. O bebê explora o mundo via reflexos e movimentos. A grande conquista é a **Permanência do Objeto** (saber que a mãe existe mesmo quando sai do quarto).
-          2. **Pré-operatório (2-7 anos):** O império do **Egocentrismo**. A criança não consegue assumir o ponto de vista do outro. Surge o "Faz de Conta" (Função Simbólica) e a linguagem explode. O pensamento é mágico e animista (a lua me segue).
-          3. **Operatório Concreto (7-11 anos):** O início da Lógica. A criança entende **Reversibilidade** (o gelo vira água e a água vira gelo) e **Conservação** (copo fino vs. copo largo). Mas ela ainda precisa do objeto físico/concreto para raciocinar.
-          4. **Operatório Formal (11+ anos):** O pensamento científico. O adolescente consegue fazer **Hipotético-Dedução** (pensar sobre possibilidades, não apenas realidades). Discute ética, política e conceitos abstratos.
+Jean Piaget rompeu com a ideia de que a inteligência é inata. Ele propôs o **Construtivismo**: o conhecimento é construído na interação sujeito-objeto.
 
-          ## Mecanismos de Adaptação
-          * **Assimilação:** Incorporar algo novo a um esquema que já existe (chamar um cavalo de "cachorro grande").
-          * **Acomodação:** Mudar o esquema mental para aceitar a novidade (entender que cavalo é uma categoria diferente).
+## Os 4 Estágios do Desenvolvimento
+1. **Sensório-Motor (0-2 anos):** A inteligência é prática. O bebê pensa através da ação. Conquista principal: *Permanência do Objeto*.
+2. **Pré-Operatório (2-7 anos):** O pensamento é simbólico, mas egocêntrico. A criança não conserva (acha que o copo alto tem mais água). Pensamento mágico/animista.
+3. **Operatório Concreto (7-12 anos):** Surge a lógica, mas ela precisa da realidade concreta. Domina a *Reversibilidade* e a *Conservação*.
+4. **Operatório Formal (12+ anos):** Pensamento hipotético-dedutivo. Abstração pura.
+
+## Mecanismos de Adaptação
+* **Assimilação:** O sujeito interpreta o mundo com os esquemas que já tem.
+* **Acomodação:** O sujeito altera seus esquemas para entender a novidade.
+* **Equilibração:** O motor do aprendizado. O conflito cognitivo gera busca por novo equilíbrio.
         `
       },
       {
-        id: 'vygotsky-wallon',
-        title: 'Vygotsky e Wallon: O Social e o Afetivo',
-        readTime: '8 min',
-        content: `
-          # Lev Vygotsky: A Teoria Histórico-Cultural
-          Diferente de Piaget (focado no biológico), Vygotsky foca no **Social**. Nós nos tornamos humanos através da interação com outros humanos.
+        id: 'aula2',
+        title: 'Vygotsky e a Zona de Desenvolvimento Proximal',
+        type: 'text',
+        text: `
+# A Teoria Histórico-Cultural
 
-          ## Conceitos Chave
-          * **ZDP (Zona de Desenvolvimento Proximal):** A distância entre o que o aluno faz sozinho (Nível Real) e o que faz com ajuda (Nível Potencial). O psicopedagogo atua AQUI.
-          * **Mediação:** O aprendizado é mediado por ferramentas (linguagem, símbolos) e por "outros mais capazes" (professores, pais).
+Para Vygotsky, o desenvolvimento é **de fora para dentro**. As funções psicológicas superiores (atenção voluntária, memória lógica) nascem nas relações sociais.
 
-          ---
-          
-          # Henri Wallon: A Psicogênese da Pessoa Completa
-          Wallon traz o coração para a sala de aula. Para ele, **não existe cognição sem emoção**.
-
-          ## Estágios de Wallon
-          1. **Impulsivo-Emocional:** O bebê se comunica pela emoção (choro, riso).
-          2. **Sensório-Motor e Projetivo:** Exploração do mundo físico.
-          3. **Personalismo (3-6 anos):** A fase da "crise de oposição" (o famoso "NÃO!"). É a construção do "EU".
-          4. **Categorial:** Idade escolar, foco no intelectual.
-          
-          > "O homem é um ser geneticamente social." - Wallon
+## Conceitos Chave
+* **ZDP (Zona de Desenvolvimento Proximal):** A distância entre o que a criança faz sozinha (Nível Real) e o que faz com ajuda (Nível Potencial). É aqui que o psicopedagogo atua!
+* **Mediação:** O aprendizado não é direto; é mediado por instrumentos (ferramentas) e signos (linguagem).
+* **Pensamento e Linguagem:** No início são separados. Por volta dos 2 anos, o pensamento torna-se verbal e a linguagem, intelectual.
         `
-      }
-    ],
-    quiz: [
-      {
-        question: "Uma criança de 4 anos chora porque 'o sol foi dormir e a deixou sozinha'. Segundo Piaget, isso demonstra:",
-        options: ["Pensamento Lógico-Matemático", "Animismo (Pensamento Mágico)", "Reversibilidade", "Conservação de Massa"],
-        correct: 1,
-        explanation: "No estágio Pré-operatório, o Animismo é a atribuição de vida e sentimentos a seres inanimados."
       },
       {
-        question: "Qual conceito de Vygotsky define a área onde o psicopedagogo deve intervir para promover avanço?",
-        options: ["Zona de Desenvolvimento Real", "Estágio Sensório-Motor", "Zona de Desenvolvimento Proximal (ZDP)", "Inconsciente Coletivo"],
-        correct: 2,
-        explanation: "A ZDP é o espaço de potencial onde a aprendizagem ocorre com mediação."
+        id: 'flash1',
+        type: 'flashcard',
+        question: "O que é a 'ZDP' segundo Vygotsky?",
+        answer: "Zona de Desenvolvimento Proximal: A distância entre o nível de desenvolvimento real (o que faz sozinho) e o potencial (o que faz com ajuda)."
+      },
+      {
+        id: 'flash2',
+        type: 'flashcard',
+        question: "Qual a principal característica do estágio Pré-Operatório de Piaget?",
+        answer: "O Egocentrismo e a falta de Conservação. A criança centra-se em apenas um aspecto da realidade (ex: altura do copo) e ignora os outros."
       }
     ]
   },
   {
     id: 'diagnostico',
-    title: 'Módulo 2: Avaliação e Diagnóstico',
+    title: 'Módulo 2: Diagnóstico Clínico',
     icon: Activity,
-    color: 'from-blue-500 to-cyan-600',
-    description: 'Ferramentas práticas: EOCA, Anamnese e Testes Projetivos.',
-    lessons: [
+    color: 'bg-emerald-600',
+    description: 'Ferramentas Práticas: EOCA, Anamnese e Provas Operatórias.',
+    content: [
       {
-        id: 'eoca-visca',
-        title: 'A EOCA de Jorge Visca',
-        readTime: '12 min',
-        content: `
-          # Entrevista Operativa Centrada na Aprendizagem (EOCA)
-          Criada por Jorge Visca, é geralmente a **primeira sessão** de avaliação psicopedagógica. O objetivo não é testar conteúdo, mas observar o **MODELO DE APRENDIZAGEM** do sujeito.
+        id: 'aula_eoca',
+        title: 'EOCA: A Porta de Entrada',
+        type: 'text',
+        text: `
+# Entrevista Operativa Centrada na Aprendizagem (EOCA)
 
-          ## A Consigna (O Comando)
-          O psicopedagogo apresenta uma caixa com materiais (papel, lápis, cola, revista, jogos) e diz:
-          > "Gostaria que você me mostrasse o que sabe fazer, o que lhe ensinaram e o que aprendeu. Utilize estes materiais como quiser."
+Criada pelo argentino Jorge Visca, a EOCA é geralmente a primeira sessão de avaliação.
 
-          ## O Que Observar? (Os 3 Pilares)
-          1. **Temática:** O que ele escolhe fazer? (Desenha? Escreve? Foge da tarefa?)
-          2. **Dinâmica:** Como ele faz? (É ansioso? Organizado? Pede ajuda o tempo todo? Desiste fácil?)
-          3. **Produto:** O resultado final tem qualidade? É coerente com a idade?
+## O Objetivo
+Não é avaliar "o que" a criança sabe (conteúdo), mas **"como"** ela aprende (modelo de aprendizagem). Observamos os sintomas, defesas e vínculos.
 
-          ## Sintomas na EOCA
-          * **Hiperassimilação:** A criança "engole" tudo sem criticar, decora sem aprender.
-          * **Hipoacomodação:** Dificuldade de mudar, rigidez cognitiva.
+## A Consigna (O Comando)
+"Gostaria que você me mostrasse o que sabe fazer, o que lhe ensinaram e o que aprendeu. Utilize este material como quiser."
+
+## Os 3 Pilares da Observação
+1. **Temática:** O que ela escolhe fazer? (Desenha, escreve, recorta?)
+2. **Dinâmica:** Como ela faz? (Pede ajuda, desiste fácil, é perfeccionista, é impulsiva?)
+3. **Produto:** O resultado final tem coerência? Está adequado à idade?
         `
       },
       {
-        id: 'testes-padrao',
-        title: 'Principais Testes Psicopedagógicos',
-        readTime: '15 min',
-        content: `
-          # Caixa de Ferramentas
-          
-          ## 1. TDE (Teste de Desempenho Escolar)
-          Avalia as capacidades fundamentais de: **Escrita, Aritmética e Leitura**. É quantitativo e compara o aluno com a média da idade.
-
-          ## 2. PROLEC (Avaliação dos Processos de Leitura)
-          Foca não só se a criança lê, mas **COMO** ela lê.
-          * Usa rota fonológica (letra por letra)?
-          * Usa rota lexical (lê a palavra visualmente inteira)?
-
-          ## 3. Testes Projetivos (Par Educativo / Família)
-          Baseados na psicanálise. Pede-se para desenhar "uma família", "uma sala de aula".
-          * **Objetivo:** Entender o vínculo emocional da criança com a aprendizagem. Ela vê a escola como um lugar seguro ou ameaçador?
-
-          ## 4. Avaliação Psicomotora (Bateria Psicomotora)
-          Avalia lateralidade, equilíbrio, esquema corporal e coordenação fina. Muitas vezes a "letra feia" (disgrafia) é um problema motor, não cognitivo.
-        `
-      }
-    ],
-    quiz: [
-      {
-        question: "Na EOCA, se a criança apenas empilha os materiais sem criar nada com sentido, podemos suspeitar de:",
-        options: ["Alta criatividade", "Inibição Cognitiva ou Dificuldade de Planejamento", "Superdotação", "Pensamento Operatório Formal"],
+        id: 'caso1',
+        title: 'Estudo de Caso: "O Menino que não parava"',
+        type: 'case_study',
+        patient: "Pedro, 8 anos, 3º ano.",
+        complaint: "A escola relata que ele não copia do quadro, levanta o tempo todo e atrapalha os colegas. A mãe diz que em casa ele é 'elétrico' e perde materiais.",
+        observation: "Na EOCA, Pedro abriu a caixa, tirou tudo para fora, começou a desenhar, parou em 10 segundos, pegou a massinha, amassou e jogou no chão. Perguntou 5 vezes 'posso ir embora?'.",
+        question: "Com base na EOCA e na queixa, qual a hipótese diagnóstica inicial mais provável e qual função cognitiva parece prejudicada?",
+        options: [
+          "Dislexia / Processamento Fonológico",
+          "TDAH / Funções Executivas (Inibição e Planejamento)",
+          "TEA / Teoria da Mente",
+          "Deficiência Intelectual / Raciocínio Lógico"
+        ],
         correct: 1,
-        explanation: "A falta de intencionalidade ou paralisia diante da consigna aberta pode indicar insegurança ou bloqueio na aprendizagem."
-      },
-      {
-        question: "O TDE (Teste de Desempenho Escolar) avalia quais três áreas fundamentais?",
-        options: ["Física, Química e Biologia", "Leitura, Escrita e Aritmética", "Desenho, Pintura e Colagem", "Memória, Atenção e Emoção"],
-        correct: 1,
-        explanation: "O TDE é o padrão ouro no Brasil para rastreio rápido de dificuldades escolares básicas."
+        explanation: "A desorganização, a troca rápida de atividades sem concluir (falta de persistência) e a agitação motora apontam para falha nas Funções Executivas, típicas do TDAH. Não há indícios de dificuldade de leitura (Dislexia) descritos ainda."
       }
     ]
   },
   {
     id: 'transtornos',
-    title: 'Módulo 3: Transtornos de Aprendizagem',
+    title: 'Módulo 3: Transtornos e Dificuldades',
     icon: Scale,
-    color: 'from-orange-500 to-red-500',
-    description: 'Dislexia, TDAH, Discalculia e TEA: Critérios diagnósticos.',
-    lessons: [
+    color: 'bg-rose-600',
+    description: 'Dislexia, Discalculia, TDAH e TEA. Critérios do DSM-5.',
+    content: [
       {
-        id: 'dislexia-tdah',
-        title: 'Diferenciando Dislexia e TDAH',
-        readTime: '10 min',
-        content: `
-          # Dislexia
-          É um transtorno neurobiológico específico da leitura.
-          * **Causa:** Déficit no processamento fonológico (dificuldade em manipular os sons da fala).
-          * **Sinais:** Leitura lenta/silabada, troca de letras com sons parecidos (F/V, P/B), dificuldade em rimas.
-          * **QI:** Normal ou acima da média. Não é falta de inteligência!
+        id: 'dislexia_aula',
+        title: 'Dislexia: Mitos e Verdades',
+        type: 'text',
+        text: `
+# O que é Dislexia?
+É um Transtorno Específico de Aprendizagem com prejuízo na **Leitura**.
+Origem: Neurobiológica. Há uma falha no **Processamento Fonológico** (a capacidade de manipular os sons da fala).
 
-          # TDAH (Transtorno de Déficit de Atenção/Hiperatividade)
-          É um transtorno das **Funções Executivas** (o gerente do cérebro).
-          * **Sinais:** Dificuldade de sustentar foco em tarefas chatas, impulsividade (age sem pensar), agitação motora.
-          * **Na Escola:** O aluno erra por desatenção, esquece material, não termina a prova a tempo.
+## Sinais de Alerta
+* Leitura lenta, silabada e com esforço.
+* Dificuldade em rimas.
+* Troca de letras auditivamente próximas (P/B, T/D, F/V).
+* Compreensão de texto prejudicada (porque gasta toda energia decodificando).
 
-          ## Diagnóstico Diferencial
-          * O Disléxico tenta ler e não consegue decodificar.
-          * O TDAH consegue ler, mas se perde no meio do texto porque viu uma mosca voando.
+## O que NÃO é
+* Não é problema de visão.
+* Não é falta de inteligência (QI é normal).
+* Não é preguiça.
         `
-      }
-    ],
-    quiz: [
-      {
-        question: "Qual a principal origem da dificuldade na Dislexia?",
-        options: ["Problema visual (vista cansada)", "Déficit no Processamento Fonológico", "Preguiça de ler", "Baixo QI"],
-        correct: 1,
-        explanation: "A Dislexia é a dificuldade do cérebro em conectar o símbolo (letra) ao som (fonema)."
       },
       {
-        question: "Alunos com TDAH geralmente apresentam falhas em qual área cognitiva?",
-        options: ["Funções Executivas (Planejamento/Inibição)", "Reconhecimento de Cores", "Vocabulário", "Coordenação Grossa"],
-        correct: 0,
-        explanation: "O TDAH afeta o córtex pré-frontal, responsável pelo controle inibitório e foco."
-      }
-    ]
-  },
-  {
-    id: 'legislacao',
-    title: 'Módulo 4: Legislação e Ética',
-    icon: FileText,
-    color: 'from-emerald-500 to-green-600',
-    description: 'Regulamentação, CBO e Direitos do Aprendente.',
-    lessons: [
-      {
-        id: 'leis-psico',
-        title: 'Regulamentação e CBO',
-        readTime: '5 min',
-        content: `
-          # A Profissão no Brasil
-          Embora a Psicopedagogia exista há décadas, a regulamentação oficial plena está em trâmite final (PL 1675/2023 e PL 116/2024).
-
-          ## CBO (Classificação Brasileira de Ocupações)
-          O código oficial é **CBO 2394-25**. Isso garante que o psicopedagogo pode ser contratado com carteira assinada sob essa função.
-
-          ## Código de Ética (ABPp)
-          * **Sigilo Profissional:** Tudo o que é ouvido no consultório é sagrado.
-          * **Devolutiva:** É obrigatório dar um retorno compreensível para a família e para a escola após a avaliação.
-        `
-      }
-    ],
-    quiz: [
-      {
-        question: "Qual o número da CBO (Classificação Brasileira de Ocupações) para Psicopedagogo?",
-        options: ["CBO 1234-56", "CBO 2394-25", "CBO 0000-00", "Não existe CBO"],
-        correct: 1,
-        explanation: "A CBO 2394-25 reconhece a existência da ocupação no mercado de trabalho brasileiro."
+        id: 'flash_dislexia',
+        type: 'flashcard',
+        question: "Qual a diferença central entre Dificuldade de Aprendizagem e Transtorno de Aprendizagem?",
+        answer: "A Dificuldade é passageira e externa (ex: má alfabetização, problemas emocionais). O Transtorno é permanente e biológico/interno (ex: Dislexia, TDAH)."
       }
     ]
   }
