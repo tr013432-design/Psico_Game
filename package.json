@@ -14,7 +14,8 @@
     "react-dom": "^18.2.0",
     "lucide-react": "^0.300.0",
     "framer-motion": "^10.16.0",
-    "canvas-confetti": "^1.9.0"
+    "canvas-confetti": "^1.9.0",
+    "react-markdown": "^9.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
